@@ -8,7 +8,7 @@ public class MealPlanFunds extends Account{
     }
 
     public void addMealPlan(MealPlan mealPlan){
-
+        this.mealplan = mealPlan;
     }
 
     public void endMealPlan(Account toAccount){
@@ -28,9 +28,16 @@ public class MealPlanFunds extends Account{
         }
     }
 
+//    DISCOUNT
     public void discount(){
 
     }
+//    DISCOUNT
+
+    public String print(){
+        return String.format("%-9d %-14d   %-4d  %-9b", this.mealplan);
+    }
+
 
 
 }

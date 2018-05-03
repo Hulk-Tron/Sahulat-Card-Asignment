@@ -5,7 +5,11 @@ public class Transaction {
     private String type;
     private int amount;
 
-    public Transaction(String type,int amount,Date date){
+    public Date getDate() {
+        return date;
+    }
+
+    public Transaction(String type, int amount, Date date){
         this.date = date;
         this.type = type;
         this.amount = amount;

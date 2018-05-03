@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -8,6 +9,10 @@ public class Account {
 
     public Account(){
 
+    }
+
+    public List<Transaction> getTransaction() {
+        return transaction;
     }
 
     public int getBalance() {
@@ -36,12 +41,27 @@ public class Account {
     }
 
     public List<Transaction> transactionHistory(Date startDate, Date endDate) {
-        if(transaction.size() == 0){
-            System.out.println("No Transaction Available");
-            return transaction;
-        }
-        else{
-            return transaction;
-        }
+        List<Transaction> transactionsList = new ArrayList<>();
+        for (Transaction trans: transaction) {
+                if(startDate.compareTo(trans.getDate()) < 0 && trans.getDate().compareTo(endDate) < 0){
+                    transactionsList.add(trans);
+                    return transactionsList;
+                }
+                else{
+                    return transactionsList;
+                }}
+        return transactionsList;
     }
+
+
+    //TO STRING MEHTOD
+    public String print(){
+        return String.format("%-9d %-14d   %-4d  %-9b", this.sahulatCard.getStudentID(), this.getBalance());
+    }
+    //TO STRING MEHTOD
+
+
+
+
+
 }
